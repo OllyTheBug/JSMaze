@@ -1,12 +1,12 @@
 function generateCellArray(defaultWalls = true, size) {
     cells = []
     //for x from 0 to size
-    for (let x = 0; x < size; x++) {
-        cells[x] = []
+    for (let y = 0; y < size; y++) {
+        cells[y] = []
         //for y from 0 to size
-        for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
             //add cell object with x,y,walls,visited,parent
-            cells[x][y] = {
+            cells[y][x] = {
                 x: x,
                 y: y,
                 walls: {
@@ -23,7 +23,7 @@ function generateCellArray(defaultWalls = true, size) {
     return cells
 }
 
-function buildHTMLGrid(cells){
+function buildHTMLGrid(cells) {
     //get MazeBox div
     let mazeBox = document.getElementById('mazeBox');
     //delete old maze
@@ -31,7 +31,7 @@ function buildHTMLGrid(cells){
     //create grid of cells
     // for row in cells
     for (let row = 0; row < cells.length; row++) {
-        for(let col = 0; col < cells[row].length; col++){
+        for (let col = 0; col < cells[row].length; col++) {
             //create cell
             let cell = document.createElement('div');
             //set class to cell
@@ -58,14 +58,14 @@ function buildHTMLGrid(cells){
             //append cell to mazeBox every 0.1 seconds
             mazeBox.appendChild(cell);
             //wait for 0.1 seconds
-            
+
         }
 
     }
 
 }
 
-function drawBorder(cells){
+function drawBorder(cells) {
     //draw left border along left side of grid
     for (let y = 0; y < size; y++) {
         cells[y][0].walls.left = true;
