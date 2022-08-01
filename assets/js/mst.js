@@ -136,72 +136,13 @@ function openWallsByParent(parents, cells, size) {
     return cells;
 }
 
-function buildHTMLGrid(cells){
-    //get MazeBox div
-    let mazeBox = document.getElementById('mazeBox');
-    //delete old maze
-    mazeBox.innerHTML = '';
-    //create grid of cells
-    // for row in cells
-    for (let row = 0; row < cells.length; row++) {
-        for(let col = 0; col < cells[row].length; col++){
-            //create cell
-            let cell = document.createElement('div');
-            //set class to cell
-            cell.className = 'cell';
-            //set id to cell
-            cell.id = `${row}-${col}`;
-            //set style to cell
-            cell.style.top = `${row * 20}px`;
-            cell.style.left = `${col * 20}px`;
-            //cell.style.borderRadius = '15px';
-            //set border based on cell.walls
-            if (cells[row][col].walls.top) {
-                cell.style.borderTop = 'solid black 1px';
-            }
-            if (cells[row][col].walls.left) {
-                cell.style.borderLeft = 'solid black 1px';
-            }
-            if (cells[row][col].walls.right) {
-                cell.style.borderRight = 'solid black 1px';
-            }
-            if (cells[row][col].walls.bottom) {
-                cell.style.borderBottom = 'solid black 1px';
-            }
-            //append cell to mazeBox every 0.1 seconds
-            mazeBox.appendChild(cell);
-            //wait for 0.1 seconds
-            
-        }
 
-    }
 
-}
 
-function createcells() {
-    let cells = [];
-    for (let i = 0; i < size; i++) {
-        cells[i] = [];
-        for (let j = 0; j < size; j++) {
-            cells[i][j] = {
-                x: i,
-                y: j,
-                //which sides are walls
-                walls: {
-                    top: true,
-                    right: true,
-                    bottom: true,
-                    left: true
-                }
-            }
-        }
-    }
-    return cells;
-}
 //main function to generate maze
 function generateMazeMST() {
     //create array of cells
-    let cells = createcells();
+    let cells = generateCellArray(true, size);
     let adjacencyMatrix = generateGridAdjacencyMatrix(size);
     let parents = buildATree(adjacencyMatrix);
     cells = openWallsByParent(parents, cells, size);

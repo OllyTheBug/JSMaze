@@ -1,27 +1,3 @@
-function generateCellArray() {
-    cells = []
-    //for x from 0 to size
-    for (let x = 0; x < size; x++) {
-        cells[x] = []
-        //for y from 0 to size
-        for (let y = 0; y < size; y++) {
-            //add cell object with x,y,walls,visited,parent
-            cells[x][y] = {
-                x: x,
-                y: y,
-                walls: {
-                    top: true,
-                    right: true,
-                    bottom: true,
-                    left: true
-                },
-                visited: false,
-                parent: null
-            }
-        }
-    }
-    return cells
-}
 
 function recursiveBacktrack(x, y, cells) {
     //check if neighbors are visited, if not, visit them
@@ -90,7 +66,7 @@ function recursiveBacktrack(x, y, cells) {
 
 function generateMazeBacktracking() {
 
-    let cells = generateCellArray()
+    let cells = generateCellArray(true, size)
     buildHTMLGrid(cells)
     recursiveBacktrack(0, 0, cells)
 }

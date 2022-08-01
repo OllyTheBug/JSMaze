@@ -48,8 +48,8 @@
                                 <h3 class="text-center text-dark mb-0">Build</h3>
                                 <div class="card text-white bg-primary shadow maze-button" onclick="generateMazeMST()">
                                     <div class="card-body text-center">
-                                        <p class="m-0"></p>
-                                        <p class="text-white-50 small m-0">Spanning Tree</p>
+                                        <p class="m-0">Spanning Tree</p>
+                                        <p class="text-white-50 small m-0"></p>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                             <div class="col-lg-6 mb-4">
                                 <div class="card text-white bg-info shadow maze-button" onclick="generateMazeBacktracking()">
                                     <div class="card-body text-center">
-                                        <p class="m-0">Recursive</p>
+                                        <p class="m-0">Recursive Backtrack</p>
                                         <p class="text-white-50 small m-0"></p>
                                     </div>
                                 </div>
@@ -77,9 +77,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-4">
-                                <div class="card text-white bg-danger shadow maze-button">
+                                <div class="card text-white bg-danger shadow maze-button" onclick="buildRecursiveDivider()">
                                     <div class="card-body text-center" style="--bs-body-color: var(--bs-blue);backdrop-filter: hue-rotate(337deg);">
-                                        <p class="m-0">Placeholder</p>
+                                        <p class="m-0">Recursive Divider</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,8 +103,11 @@
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <!-- maze generation -->
+    <script src="assets/js/shared.js"></script>
     <script src="assets/js/mst.js"></script>
     <script src="assets/js/backtracker.js"></script>
+    <script src="assets/js/divider.js"></script>
 </body>
 
 </html>
