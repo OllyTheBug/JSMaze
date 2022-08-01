@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><span>Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html"><span>About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="table.html"><span>Resume</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html"><span>Register</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Maze Generator</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xl-5 mb-4" id="contentBox">
+                        <div class="card shadow mb-4"></div>
+
+                        <div id="mazeBox"></div>
+
+                        <div class="card shadow mb-4">
+                            <ul class="list-group list-group-flush"></ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="max-width: 319px;">
+                            <div class="col-lg-6 mb-4">
+                                <h3 class="text-center text-dark mb-0">Build</h3>
+                                <div class="card text-white bg-primary shadow maze-button" onclick="generateMazeMST()">
+                                    <div class="card-body text-center">
+                                        <p class="m-0"></p>
+                                        <p class="text-white-50 small m-0">Spanning Tree</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <h3 class="text-center text-dark mb-0">Solve</h3>
+                                <div class="card text-white bg-success shadow maze-button">
+                                    <div class="card-body text-center">
+                                        <p class="m-0">Success</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card text-white bg-info shadow maze-button" onclick="generateMazeBacktracking()">
+                                    <div class="card-body text-center">
+                                        <p class="m-0">Recursive</p>
+                                        <p class="text-white-50 small m-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card text-white bg-warning shadow maze-button">
+                                    <div class="card-body text-center">
+                                        <p class="m-0">Warning</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card text-white bg-danger shadow maze-button">
+                                    <div class="card-body text-center" style="--bs-body-color: var(--bs-blue);backdrop-filter: hue-rotate(337deg);">
+                                        <p class="m-0">Placeholder</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card text-white bg-secondary shadow maze-button">
+                                    <div class="card-body text-center" style="filter: hue-rotate(0deg) saturate(200%);--bs-primary: #4e73df;--bs-primary-rgb: 78,115,223;backdrop-filter: opacity(0) saturate(22%);background: var(--bs-indigo);opacity: 1;border-radius: 5px;">
+                                        <p class="m-0">Secondary</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Ethan Mendelson</span></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/mst.js"></script>
+    <script src="assets/js/backtracker.js"></script>
+</body>
+
+</html>

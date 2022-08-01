@@ -1,0 +1,9 @@
+#mazeBox{
+    width:600px;
+    height:600px;
+    margin:auto;
+    display:grid;
+    /* grid template */
+    grid-template-columns: repeat(5, 1fr);
+
+}
