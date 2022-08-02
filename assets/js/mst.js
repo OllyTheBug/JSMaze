@@ -1,7 +1,7 @@
 
 // create size*size array of cell objects
 
-size = 10
+
 
 function buildATree(adjacencyMatrix) {
     nodeCount = adjacencyMatrix.length
@@ -147,6 +147,12 @@ function generateMazeMST() {
     let parents = buildATree(adjacencyMatrix);
     cells = openWallsByParent(parents, cells, size);
     buildHTMLGrid(cells);
-    console.log('adjacency matrix:');
+    //instantiate a new treeNode object
+    mazeTree = cellsToTree(cells, 0, 0, null);
+
+
+
+
+
 
 }

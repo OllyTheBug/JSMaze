@@ -3,12 +3,13 @@ function recursiveBacktrack(x, y, cells) {
     //check if neighbors are visited, if not, visit them
     //check above
     cells[y][x].visited = true
-    buildHTMLGrid(cells)
     let picks = [0, 1, 2, 3]
     //while picks is not empty
     while (picks.length > 0) {
         //pick a random neighbor
         let pick = picks[Math.floor(Math.random() * picks.length)]
+
+    
         switch (pick) {
             //if pick is 0, check above
             case 0:
@@ -56,7 +57,7 @@ function recursiveBacktrack(x, y, cells) {
                 break;
         }
     }
-
+    
     buildHTMLGrid(cells)
     
     return
@@ -69,4 +70,5 @@ function generateMazeBacktracking() {
     let cells = generateCellArray(true, size)
     buildHTMLGrid(cells)
     recursiveBacktrack(0, 0, cells)
+    mazeTree = cellsToTree(cells, 0, 0, null);
 }

@@ -1,3 +1,17 @@
+/* -------------------------------------------------------------------------- */
+/*                              Global constants                              */
+/* -------------------------------------------------------------------------- */
+size = 6;
+
+/* -------------------------------------------------------------------------- */
+/*                              Shared functions                              */
+/* -------------------------------------------------------------------------- */
+
+//depth first search of tree of treeNodes
+function dfs(tree) {
+    //
+}
+
 function generateCellArray(defaultWalls = true, size) {
     cells = []
     //for x from 0 to size
@@ -62,6 +76,42 @@ function buildHTMLGrid(cells) {
         }
 
     }
+
+}
+
+class treeNode{
+    constructor(y,x){
+        this.x = x;
+        this.y = y;
+        this.left = null;
+        this.right = null;
+        this.up = null;
+        this.down = null;
+    }
+}
+
+//recursive function cellsToTree(cells) that takes in a 2D array of cells and returns a tree of cells with each open wall leading to a child cell
+function cellsToTree(cells, y, x, lastDirection) {
+    //create new tree node
+    let node = new treeNode(y,x);
+    //if cells[y][x] has an open left wall
+    if (cells[y][x].walls.left===false && lastDirection !== 'right') {
+        node.left = cellsToTree(cells, y, x - 1, 'left');
+    }
+    //if cells[y][x] has an open bottom wall
+    if (cells[y][x].walls.bottom===false && lastDirection !== 'up') {
+        node.down = cellsToTree(cells, y + 1, x, 'down');
+    }
+    //if cells[y][x] has an open right wall
+    if (cells[y][x].walls.right===false && lastDirection !== 'left') {
+        node.right = cellsToTree(cells, y, x + 1, 'right');
+    }
+    //if cells[y][x] has an open top wall
+    if (cells[y][x].walls.top===false && lastDirection !== 'down') {
+        node.up = cellsToTree(cells, y - 1, x, 'up');
+    }
+    //return tree
+    return node;
 
 }
 

@@ -10,7 +10,7 @@
   margin:auto;
   display:grid;
   /* grid template */
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
 }
 .sidebar{

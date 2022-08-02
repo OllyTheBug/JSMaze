@@ -66,4 +66,5 @@ function sideWinder() {
     runSideWinder(cells)
     //draw grid
     buildHTMLGrid(cells)
+    mazeTree = cellsToTree(cells, 0, 0, null);
 }
