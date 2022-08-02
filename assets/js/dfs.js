@@ -7,6 +7,7 @@ function dfs(tree, path) {
     //if we reach a dead end, return null
     if (tree.left === null && tree.right === null && tree.up === null && tree.down === null) {
         //if we are not at the end of the maze, return false
+        colorCell(tree.y, tree.x, '#ff9999');
         return false;
     }
     //left child
@@ -37,7 +38,8 @@ function dfs(tree, path) {
             return true;
         }
     }
-
+    //color cell red
+    colorCell(tree.y, tree.x, '#ff9999');
     return false
 
 

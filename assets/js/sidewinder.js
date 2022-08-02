@@ -19,6 +19,7 @@ function runSideWinder(cells) {
     // while we haven't reached the bottom
     while (y < size) {
         // while we haven't reached the right edge
+        buildHTMLGrid(cells)
         runSet = []
         while (x < size) {
             // add the cell to the run
@@ -66,5 +67,6 @@ function sideWinder() {
     runSideWinder(cells)
     //draw grid
     buildHTMLGrid(cells)
+    maze = cells
     mazeTree = cellsToTree(cells, 0, 0, null);
 }

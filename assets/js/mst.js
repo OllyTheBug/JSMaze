@@ -145,7 +145,7 @@ function generateMazeMST() {
     let cells = generateCellArray(true, size);
     let adjacencyMatrix = generateGridAdjacencyMatrix(size);
     let parents = buildATree(adjacencyMatrix);
-    cells = openWallsByParent(parents, cells, size);
+    maze = openWallsByParent(parents, cells, size);
     buildHTMLGrid(cells);
     //instantiate a new treeNode object
     mazeTree = cellsToTree(cells, 0, 0, null);

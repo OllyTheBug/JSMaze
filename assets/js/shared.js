@@ -2,6 +2,7 @@
 /*                              Globals                              */
 /* -------------------------------------------------------------------------- */
 var size = 10;
+var maze = null;
 var mazeTree = null;
 var path = null;
 
@@ -24,6 +25,10 @@ slider.oninput = function () {
     drawBorder(generateCellArray(false, size));
     //update sizeText to Size: size
     document.getElementById('sizeText').innerHTML = `Size: ${size}`;
+    //clear maze/path/tree
+    maze = null;
+    mazeTree = null;
+    path = null;
 }
 //get #mazeBox element
 
@@ -164,12 +169,15 @@ function drawPath(path) {
     for (let i = 0; i < path.length; i++) {
         let x = path[i][1];
         let y = path[i][0];
-        let cellID = `${y}-${x}`;
-        let cell = document.getElementById(cellID);
-        cell.style.backgroundColor = '#00ff00';
+        colorCell(y,x, '#00ff00')
     }
+
     if (size === 1) {
         document.getElementById('0-0').innerHTML = '<h1 style="position:relative;top:40%;font-size: 85px;" class="text-center text-dark">(ಠ ͜ʖ ಠ)</h1>';
     }
-
+}
+function colorCell(y,x, color){
+    let cellID = `${y}-${x}`;
+    let cell = document.getElementById(cellID);
+    cell.style.backgroundColor = color;
 }
