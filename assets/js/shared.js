@@ -2,6 +2,7 @@
 /*                              Global constants                              */
 /* -------------------------------------------------------------------------- */
 var size = 10;
+var maze = null;
 var mazeTree = null;
 var path = null;
 
@@ -164,8 +165,11 @@ function drawPath(path) {
     for (let i = 0; i < path.length; i++) {
         let x = path[i][1];
         let y = path[i][0];
-        let cellID = `${y}-${x}`;
-        let cell = document.getElementById(cellID);
-        cell.style.backgroundColor = '#00ff00';
+        colorCell(y,x, '#00ff00')
     }
+}
+function colorCell(y,x, color){
+    let cellID = `${y}-${x}`;
+    let cell = document.getElementById(cellID);
+    cell.style.backgroundColor = color;
 }

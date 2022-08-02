@@ -70,5 +70,6 @@ function generateMazeBacktracking() {
     let cells = generateCellArray(true, size)
     buildHTMLGrid(cells)
     recursiveBacktrack(0, 0, cells)
+    maze = cells
     mazeTree = cellsToTree(cells, 0, 0, null);
 }
