@@ -1,16 +1,14 @@
 /* -------------------------------------------------------------------------- */
 /*                              Global constants                              */
 /* -------------------------------------------------------------------------- */
-size = 6;
-
+var size = 6;
+var mazeTree = null;
+var path = null;
 /* -------------------------------------------------------------------------- */
 /*                              Shared functions                              */
 /* -------------------------------------------------------------------------- */
 
-//depth first search of tree of treeNodes
-function dfs(tree) {
-    //
-}
+
 
 function generateCellArray(defaultWalls = true, size) {
     cells = []
@@ -134,4 +132,15 @@ function drawBorder(cells) {
     }
     //draw grid
     buildHTMLGrid(cells);
+}
+
+function drawPath(path){
+    //for pair from 0 to path.length
+    for (let i = 0; i < path.length; i++) {
+        let x = path[i][1];
+        let y = path[i][0];
+        let cellID = `${y}-${x}`;
+        let cell = document.getElementById(cellID);
+        cell.style.backgroundColor = '#00ff00';
+    }
 }
