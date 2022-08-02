@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/css/untitled.css">
 </head>
 
@@ -35,8 +36,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5 mb-4" id="contentBox">
                         <div class="card shadow mb-4"></div>
-
+                        <h3 class="text-center text-dark mb-0" id="sizeText">Size: 10</h3>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="20" value="10" class="slider" id="slider">
+                        </div>
                         <div id="mazeBox"></div>
+
 
                         <div class="card shadow mb-4">
                             <ul class="list-group list-group-flush"></ul>
@@ -62,7 +67,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-4">
-                                <div class="card text-white bg-info shadow maze-button" onclick="generateMazeBacktracking()">
+                                <div class="card text-white bg-info shadow maze-button"
+                                    onclick="generateMazeBacktracking()">
                                     <div class="card-body text-center">
                                         <p class="m-0">Recursive Backtrack</p>
                                         <p class="text-white-50 small m-0"></p>
@@ -78,22 +84,29 @@
                             </div>
                             <div class="col-lg-6 mb-4">
                                 <div class="card text-white bg-danger shadow maze-button" onclick="sideWinder()">
-                                    <div class="card-body text-center" style="--bs-body-color: var(--bs-blue);backdrop-filter: hue-rotate(337deg);">
+                                    <div class="card-body text-center"
+                                        style="--bs-body-color: var(--bs-blue);backdrop-filter: hue-rotate(337deg);">
                                         <p class="m-0">Sidewinder</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-4">
                                 <div class="card text-white bg-secondary shadow maze-button">
-                                    <div class="card-body text-center" style="filter: hue-rotate(0deg) saturate(200%);--bs-primary: #4e73df;--bs-primary-rgb: 78,115,223;backdrop-filter: opacity(0) saturate(22%);background: var(--bs-indigo);opacity: 1;border-radius: 5px;">
+                                    <div class="card-body text-center"
+                                        style="filter: hue-rotate(0deg) saturate(200%);--bs-primary: #4e73df;--bs-primary-rgb: 78,115,223;backdrop-filter: opacity(0) saturate(22%);background: var(--bs-indigo);opacity: 1;border-radius: 5px;">
                                         <p class="m-0">Secondary</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
+
                 </div>
+
             </div>
+
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
                     <div class="text-center my-auto copyright"><span>Ethan Mendelson</span></div>

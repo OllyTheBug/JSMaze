@@ -1,9 +1,34 @@
 /* -------------------------------------------------------------------------- */
 /*                              Global constants                              */
 /* -------------------------------------------------------------------------- */
-var size = 6;
+var size = 10;
 var mazeTree = null;
 var path = null;
+
+/* -------------------------------------------------------------------------- */
+/*                              Configure webpage                             */
+/* -------------------------------------------------------------------------- */
+//get slider and maze container
+let mazeBox = document.getElementById('mazeBox');
+let slider = document.getElementById('slider');
+drawBorder(generateCellArray(false, size));
+//when slider is changed
+slider.oninput = function () {
+    //set size to slider value casted to int
+    size = parseInt(slider.value);
+    // clear maze
+    mazeBox.innerHTML = '';
+    // set style   grid-template-columns: repeat(6, 1fr);
+    //redraw border
+    mazeBox.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    drawBorder(generateCellArray(false, size));
+    //update sizeText to Size: size
+    document.getElementById('sizeText').innerHTML = `Size: ${size}`;
+}
+//get #mazeBox element
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                              Shared functions                              */
 /* -------------------------------------------------------------------------- */
@@ -77,8 +102,8 @@ function buildHTMLGrid(cells) {
 
 }
 
-class treeNode{
-    constructor(y,x){
+class treeNode {
+    constructor(y, x) {
         this.x = x;
         this.y = y;
         this.left = null;
@@ -91,21 +116,21 @@ class treeNode{
 //recursive function cellsToTree(cells) that takes in a 2D array of cells and returns a tree of cells with each open wall leading to a child cell
 function cellsToTree(cells, y, x, lastDirection) {
     //create new tree node
-    let node = new treeNode(y,x);
+    let node = new treeNode(y, x);
     //if cells[y][x] has an open left wall
-    if (cells[y][x].walls.left===false && lastDirection !== 'right') {
+    if (cells[y][x].walls.left === false && lastDirection !== 'right') {
         node.left = cellsToTree(cells, y, x - 1, 'left');
     }
     //if cells[y][x] has an open bottom wall
-    if (cells[y][x].walls.bottom===false && lastDirection !== 'up') {
+    if (cells[y][x].walls.bottom === false && lastDirection !== 'up') {
         node.down = cellsToTree(cells, y + 1, x, 'down');
     }
     //if cells[y][x] has an open right wall
-    if (cells[y][x].walls.right===false && lastDirection !== 'left') {
+    if (cells[y][x].walls.right === false && lastDirection !== 'left') {
         node.right = cellsToTree(cells, y, x + 1, 'right');
     }
     //if cells[y][x] has an open top wall
-    if (cells[y][x].walls.top===false && lastDirection !== 'down') {
+    if (cells[y][x].walls.top === false && lastDirection !== 'down') {
         node.up = cellsToTree(cells, y - 1, x, 'up');
     }
     //return tree
@@ -134,7 +159,7 @@ function drawBorder(cells) {
     buildHTMLGrid(cells);
 }
 
-function drawPath(path){
+function drawPath(path) {
     //for pair from 0 to path.length
     for (let i = 0; i < path.length; i++) {
         let x = path[i][1];
