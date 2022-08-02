@@ -1,5 +1,7 @@
 # Simple JavaScript Maze Generator
 Live: https://ollythebug.github.io/JSMaze/
+
+
 Just open index.html in a web browser.
 Doesn't use canvas, just creates an HTML grid.
 
