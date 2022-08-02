@@ -25,6 +25,10 @@ slider.oninput = function () {
     drawBorder(generateCellArray(false, size));
     //update sizeText to Size: size
     document.getElementById('sizeText').innerHTML = `Size: ${size}`;
+    //clear maze/path/tree
+    maze = null;
+    mazeTree = null;
+    path = null;
 }
 //get #mazeBox element
 
