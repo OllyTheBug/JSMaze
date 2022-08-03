@@ -56,9 +56,7 @@ function generateCellArray(defaultWalls = true, size) {
                     right: defaultWalls,
                     bottom: defaultWalls,
                     left: defaultWalls
-                },
-                visited: false,
-                parent: null
+                }
             }
         }
     }
