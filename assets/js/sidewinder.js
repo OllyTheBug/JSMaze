@@ -20,7 +20,7 @@ function runSideWinder(cells) {
     while (y < size) {
         // while we haven't reached the right edge
         buildHTMLGrid(cells)
-        runSet = []
+        let runSet = []
         while (x < size) {
             // add the cell to the run
             runSet.push(cells[y][x])

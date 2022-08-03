@@ -36,7 +36,7 @@ function buildATree(adjacencyMatrix) {
             if (adjacencyMatrix[minNode[0]][i] != -1) {
                 //if neighbor is not visited
                 if (visited.indexOf(i) == -1) {
-                    u_v = adjacencyMatrix[minNode[0]][i]
+                    let u_v = adjacencyMatrix[minNode[0]][i]
                     //if u_v < key[v]
                     if (u_v < keys[i]) {
                         //set key[v] = u_v
